@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, sans-serif">
+  <rect width="800" height="450" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">Note System 架构图</text>
+
+  <!-- Browser -->
+  <rect x="30" y="160" width="130" height="80" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="95" y="195" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">浏览器</text>
+  <text x="95" y="215" text-anchor="middle" font-size="11" fill="#3b82f6">Vue 3 SPA</text>
+
+  <!-- Cloudflare Pages -->
+  <rect x="240" y="60" width="320" height="280" rx="10" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="400" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#b45309">Cloudflare Pages</text>
+
+  <!-- Static Assets -->
+  <rect x="270" y="110" width="120" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="330" y="138" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">静态资源</text>
+  <text x="330" y="155" text-anchor="middle" font-size="10" fill="#b45309">HTML/CSS/JS</text>
+
+  <!-- Functions -->
+  <rect x="270" y="200" width="120" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="330" y="228" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">Functions</text>
+  <text x="330" y="245" text-anchor="middle" font-size="10" fill="#b45309">API 层</text>
+
+  <!-- KV Cache -->
+  <rect x="430" y="200" width="110" height="60" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="485" y="228" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">KV 缓存</text>
+  <text x="485" y="245" text-anchor="middle" font-size="10" fill="#059669">5min / 1hr</text>
+
+  <!-- GitHub -->
+  <rect x="630" y="160" width="140" height="80" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="700" y="195" text-anchor="middle" font-size="13" font-weight="600" fill="#6d28d9">GitHub</text>
+  <text x="700" y="215" text-anchor="middle" font-size="11" fill="#7c3aed">Contents API</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="200" x2="240" y2="160" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="160" y1="200" x2="270" y2="225" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="230" x2="430" y2="230" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="230" x2="630" y2="200" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="230" x2="630" y2="210" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow)"/>
+
+  <!-- Labels -->
+  <text x="430" y="315" text-anchor="middle" font-size="10" fill="#94a3b8">KV 未命中时才请求 GitHub API</text>
+
+  <!-- Legend -->
+  <rect x="30" y="380" width="740" height="50" rx="6" fill="#f1f5f9"/>
+  <circle cx="60" cy="405" r="6" fill="#3b82f6"/><text x="75" y="409" font-size="10" fill="#475569">前端</text>
+  <circle cx="140" cy="405" r="6" fill="#f59e0b"/><text x="155" y="409" font-size="10" fill="#475569">Cloudflare</text>
+  <circle cx="250" cy="405" r="6" fill="#10b981"/><text x="265" y="409" font-size="10" fill="#475569">KV 缓存</text>
+  <circle cx="350" cy="405" r="6" fill="#8b5cf6"/><text x="365" y="409" font-size="10" fill="#475569">GitHub API</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

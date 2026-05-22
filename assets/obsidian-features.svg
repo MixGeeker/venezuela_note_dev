@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" font-family="system-ui, sans-serif">
+  <rect width="700" height="500" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">Obsidian 链接解析流程</text>
+
+  <!-- Step 1: Raw Markdown -->
+  <rect x="40" y="60" width="200" height="130" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="140" y="85" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">1. 原始 Markdown</text>
+  <rect x="55" y="95" width="170" height="80" rx="4" fill="#eff6ff"/>
+  <text x="65" y="113" font-size="11" fill="#475569" font-family="monospace">[[架构设计]]</text>
+  <text x="65" y="131" font-size="11" fill="#475569" font-family="monospace">![[diagram.svg]]</text>
+  <text x="65" y="149" font-size="11" fill="#475569" font-family="monospace">> [!note] 提示</text>
+  <text x="65" y="167" font-size="11" fill="#475569" font-family="monospace">#tag</text>
+
+  <!-- Arrow -->
+  <line x1="240" y1="125" x2="280" y2="125" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- Step 2: Link Extraction -->
+  <rect x="280" y="60" width="160" height="130" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="360" y="85" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">2. 链接提取</text>
+  <text x="295" y="110" font-size="10" fill="#475569">• Wikilink 解析</text>
+  <text x="295" y="128" font-size="10" fill="#475569">• Markdown 链接</text>
+  <text x="295" y="146" font-size="10" fill="#475569">• Embed 识别</text>
+  <text x="295" y="164" font-size="10" fill="#475569">• Callout 检测</text>
+
+  <!-- Arrow -->
+  <line x1="440" y1="125" x2="480" y2="125" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- Step 3: Resolution -->
+  <rect x="480" y="60" width="180" height="130" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="570" y="85" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">3. 链接解析</text>
+  <text x="495" y="110" font-size="10" fill="#475569">• 路径匹配</text>
+  <text x="495" y="128" font-size="10" fill="#475569">• 别名查找</text>
+  <text x="495" y="146" font-size="10" fill="#475569">• 锚点定位 #heading</text>
+  <text x="495" y="164" font-size="10" fill="#475569">• 块引用 #^block-id</text>
+
+  <!-- Arrow down from Resolution -->
+  <line x1="570" y1="190" x2="570" y2="220" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- Step 4: Index -->
+  <rect x="400" y="220" width="260" height="120" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="530" y="245" text-anchor="middle" font-size="12" font-weight="600" fill="#9d174d">4. Vault 索引</text>
+  <text x="415" y="268" font-size="10" fill="#475569">• notes[] — 笔记元数据 + 链接</text>
+  <text x="415" y="286" font-size="10" fill="#475569">• tags[] — 标签索引</text>
+  <text x="415" y="304" font-size="10" fill="#475569">• graph — 节点 + 边</text>
+  <text x="415" y="322" font-size="10" fill="#475569">• brokenLinks[] — 断链诊断</text>
+
+  <!-- Step 5: Rendering -->
+  <rect x="40" y="370" width="300" height="110" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="190" y="395" text-anchor="middle" font-size="12" font-weight="600" fill="#5b21b6">5. 前端渲染</text>
+  <text x="55" y="418" font-size="10" fill="#475569">• Wikilink → 内部链接（蓝色下划线）</text>
+  <text x="55" y="436" font-size="10" fill="#475569">• Embed → 嵌入内容块</text>
+  <text x="55" y="454" font-size="10" fill="#475569">• Callout → 样式化提示框</text>
+  <text x="55" y="472" font-size="10" fill="#475569">• 断链 → 橙色虚线下划线</text>
+
+  <!-- Arrow from Index to Rendering -->
+  <path d="M 400 310 Q 300 350 250 370" stroke="#64748b" stroke-width="1.5" fill="none" marker-end="url(#arrow2)"/>
+
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
